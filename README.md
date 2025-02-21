@@ -27,13 +27,13 @@ Using lazy.nvim:
 ## Usage
 
 ```lua
-:BlueskyPost "Your post text here"
+:BlueskyPost Your post text here
 ```
 
 Or, in Lua:
 
 ```lua
-require('bluesky').post("Your post text here")
+require('bsky-nvim.post').MakePost("Your post text here")
 ```
 
 ## Configuration
@@ -43,6 +43,11 @@ To configure, create a `bluesky.lua` file or configure directly:
 ```lua
 require('bsky-nvim').setup({
   -- Your configuration options here
+    username = {YOUR-BSKY-HANDLE},
+    -- Optional: It is highly recommended to leave this empty
+    -- and instead add the environment variable $BSKY_PASSWORD
+    -- to your .bashrc or equivalent
+    password = {YOUR-BSKY-PASSWORD}
 })
 ```
 
@@ -55,4 +60,3 @@ require('bsky-nvim').setup({
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
-```
