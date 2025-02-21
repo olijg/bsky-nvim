@@ -46,6 +46,12 @@ require('bsky-nvim').setup({
 })
 ```
 
+## Roadmap
+
+- Open an nvim window to compose posts
+- See a feed from an nvim window
+- Interact with posts in your feed
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
