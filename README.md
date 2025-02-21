@@ -8,19 +8,12 @@ A Neovim plugin for posting to Bluesky.
 
 ## Installation
 
-Using packer.nvim:
-
-```lua
-use {
-  'olijg/bsky-nvim',
-}
-```
-
 Using lazy.nvim:
 
 ```lua
 {
   'olijg/bsky-nvim',
+  dependencies = { 'nvim-lua/plenary.nvim' }
 }
 ```
 
