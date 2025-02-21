@@ -1,6 +1,7 @@
 local M = {
   username = "",
-  password = vim.env.BSKY_PASSWORD
+  password = vim.env.BSKY_PASSWORD,
+  baseUrl = "https://bsky.social/"
 }
 
 function M.setup(opts)
