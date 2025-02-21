@@ -1,21 +1,18 @@
-local Curl = require("plenary.curl")
-
 local BS = {}
 
-function BS.make_post()
-  ---TODO!: Posting functionality goes here
-  
-end
+local config = require("bsky-nvim.config")
+local post = require('bsky-nvim.post')
 
 function BS.setup(opts)
-  opts = opts or {}
-  vim.api.nvim_create_user_command("BskyPost", BS.make_post, {})
-  local keymap = opts.keymap or '<leader>bs'
-
-  vim.keymap.set('n', keymap, BS.open_post_panel, {
-    desc = "Post to Bluesky from Nvim",
-    silent = true
-  })
+  opts = opts or vim.notify("Configuration not setup")
+  if opts then
+    config.setup(opts)
+  end
+  vim.api.nvim_create_user_command("BskyPost",
+    function(args)
+      post.MakePost(args.fargs[1])
+    end,
+    { nargs = 1 })
 end
 
 return BS
